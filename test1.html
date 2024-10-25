@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programcılığı Testi</title>
+</head>
+<body>
+
+<h1>Web Programcılığı Testi</h1>
+<p>Lütfen aşağıdaki soruları cevaplayın.</p>
+
+<form action="/submit-test" method="POST">
+
+    <!-- kişisel Bilgiler -->
+    <label for="name">Ad Soyad:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="password">Şifre:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="email">E-posta:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Telefon Numarası:</label><br>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="5551234567" required><br><br>
+
+    <label for="birthdate">Doğum Tarihi:</label><br>
+    <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+    <!-- web ile ilgili sorular -->
+    <label>Web Programcılığı Tecrübeniz:</label><br>
+    <input type="radio" id="beginner" name="experience" value="beginner">
+    <label for="beginner">Başlangıç</label><br>
+    <input type="radio" id="intermediate" name="experience" value="intermediate">
+    <label for="intermediate">Orta</label><br>
+    <input type="radio" id="advanced" name="experience" value="advanced">
+    <label for="advanced">İleri</label><br><br>
+
+    <!-- programlama dili becerileri -->
+    <label>Hangi dili/dilleri kullanıyorsunuz?:</label><br>
+    <input type="checkbox" id="html" name="interest" value="HTML">
+    <label for="html">HTML</label><br>
+    <input type="checkbox" id="css" name="interest" value="CSS">
+    <label for="css">CSS</label><br>
+    <input type="checkbox" id="js" name="interest" value="JavaScript">
+    <label for="js">JavaScript</label><br><br>
+
+    <!-- tercih -->
+    <label for="favcolor"> Bir Site Tasarlarken En çok Hangi Rengi Tercih Edersiniz? :</label><br>
+    <input type="color" id="favcolor" name="favcolor" value="#0000ff"><br><br>
+
+    <!-- (range) -->
+    <label for="htmlskill">HTML Bilgi Düzeyiniz:</label><br>
+    <input type="range" id="htmlskill" name="htmlskill" min="0" max="10"><br><br>
+
+    <!-- (search) -->
+    <label for="search">İlgili Konuları Arayın:</label><br>
+    <input type="search" id="search" name="search" placeholder="Arama yapın..."><br><br>
+
+    <button type="submit">Gönder</button>
+    <button type="reset">Temizle</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üyelik İşlemleri</title>
+</head>
+<body>
+
+<h1>Üyelik İşlemleri</h1>
+
+<!-- direkt giriş yapacaklar için -->
+<div id="login-form">
+    <h2>Giriş Yap</h2>
+    <form action="/login" method="POST">
+        <label for="username">Kullanıcı Adı (E-posta)</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Şifre</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Giriş Yap</button>
+    </form>
+    <p>
+        <a href="#reset-form">Şifremi Unuttum</a> | 
+        <a href="#register-form">Yeni Üyelik Oluştur</a>
+    </p>
+</div>
+
+<!-- şifre sıfırlayacaklar için -->
+<div id="reset-form">
+    <h2>Şifre Sıfırlama</h2>
+    <form action="/password-reset" method="POST">
+        <label for="email-reset">E-posta</label><br>
+        <input type="email" id="email-reset" name="email" required><br><br>
+        <button type="submit">Şifre Sıfırlama Kodu Gönder</button>
+    </form>
+    <p>
+        <a href="#login-form">Giriş Yap</a> | 
+        <a href="#register-form">Yeni Üyelik Oluştur</a>
+    </p>
+</div>
+
+<!-- yeni üyelik oluşturacaklar için -->
+<div id="register-form">
+    <h2>Yeni Üyelik</h2>
+    <form action="/register" method="POST">
+        <label for="email">E-posta (Kullanıcı Adı)</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="firstname">Ad</label><br>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        <label for="lastname">Soyad</label><br>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        <label for="birthdate">Doğum Tarihi</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+        <label for="gender">Cinsiyet</label><br>
+        <select id="gender" name="gender" required>
+            <option value="">Seçiniz</option>
+            <option value="male">Erkek</option>
+            <option value="female">Kadın</option>
+            <option value="other">Diğer</option>
+        </select><br><br>
+        <label for="password">Şifre</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Kayıt Ol</button>
+    </form>
+    <p>
+        <a href="#login-form">Giriş Yap</a> | 
+        <a href="#reset-form">Şifremi Unuttum</a>
+    </p>
+</div>
+
+</body>
+</html>
