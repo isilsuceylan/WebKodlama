@@ -1,15 +1,101 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hikaye </title>
+    <title>Hikaye</title>
+    <style>
+        /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
+        /* Başlık stil */
+        header h1, header h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #4b0082;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        /* Menü stil */
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        nav ul li {
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            color: #4b0082;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #a8e6cf;
+            text-decoration: underline;
+        }
+
+        /* Bölüm stili */
+        .content-section {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Görsel ve medya stili */
+        .content-section img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        audio {
+            margin-top: 10px;
+        }
+
+        /* Figcaption stil */
+        figcaption {
+            font-weight: bold;
+            color: #4b0082;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
         
 <header> 
-    <h1> <b> MİRA'NIN KEŞFİ </b> </h1>
+    <h1>MİRA'NIN KEŞFİ</h1>
 </header>
+
+<!-- Menü -->
 <nav>
     <ul>
         <li><a href="#cesaret-kesfi">BÖLÜM 1: Cesaret Keşfi</a></li>
@@ -18,59 +104,63 @@
         <li><a href="#sehrin-sirri">BÖLÜM 4: Şehrin Sırrı</a></li>
     </ul>
 </nav>
-<header> 
- <h2 id="cesaret-kesfi">BÖLÜM 1: Cesaret Keşfi</h2>
-</header>
- <p> Genç kaşif Mira, küçük köyünde büyüyen hayalperest biriydi.</p>
- <p>Efsanelerdeki kaybolmuş şehir, onun için bir tutku haline gelmişti. </p>
- <p>Bu şehirde herkesin en derin arzuları gerçekleşiyordu, ama kimse bu şehri bulamamıştı.</p>
- <p> Mira, kendi içindeki cesareti keşfederek yola çıkmaya karar verdi.</p>
- <p> Haritasız, sadece kalbinin sesini dinleyerek ilerleyecekti.</p>
 
- <img src="img/bolum1.png" width="500px" alt="cesaretkesfi">
+<!-- Bölüm 1 -->
+<section id="cesaret-kesfi" class="content-section">
+    <header>
+        <h2>BÖLÜM 1: Cesaret Keşfi</h2>
+    </header>
+    <p>Genç kaşif Mira, küçük köyünde büyüyen hayalperest biriydi.</p>
+    <p>Efsanelerdeki kaybolmuş şehir, onun için bir tutku haline gelmişti.</p>
+    <p>Bu şehirde herkesin en derin arzuları gerçekleşiyordu, ama kimse bu şehri bulamamıştı.</p>
+    <p>Mira, kendi içindeki cesareti keşfederek yola çıkmaya karar verdi.</p>
+    <p>Haritasız, sadece kalbinin sesini dinleyerek ilerleyecekti.</p>
+    <img src="img/bolum1.png" alt="Cesaret Keşfi">
+</section>
 
- <header> 
-    <h2 id="yola-cikis">BÖLÜM 2: Yola Çıkış</h2>
+<!-- Bölüm 2 -->
+<section id="yola-cikis" class="content-section">
+    <header>
+        <h2>BÖLÜM 2: Yola Çıkış</h2>
+    </header>
+    <p>Mira, efsanevi kaybolmuş şehri bulma arzusuyla köyünden ayrıldı.</p>
+    <p>Haritasız, yalnızca kalbinin rehberliğine güvenerek bilinmeyene doğru adım attı.</p>
+    <p>Bu yolculuk, onu hem dış dünyada hem de kendi içinde keşiflere götürecekti.</p>
+    <img src="img/bolum2.png" alt="Yola Çıkış">
+</section>
 
-</header>
- <p> Mira, efsanevi kaybolmuş şehri bulma arzusuyla köyünden ayrıldı. </p>
- <p>Haritasız, yalnızca kalbinin rehberliğine güvenerek bilinmeyene doğru adım attı.</p>
- <p>Bu yolculuk, onu hem dış dünyada hem de kendi içinde keşiflere götürecekti.</p>
- <img src="img/bolum2.png" width="500px"  alt="yolacikis">
+<!-- Bölüm 3 -->
+<section id="zorluklar" class="content-section">
+    <header>
+        <h2>BÖLÜM 3: Zorluklar</h2>
+    </header>
+    <p>Mira, yolculuğunda fırtınalar, karanlık ormanlar ve derin vadilerle mücadele etti.</p>
+    <p>Her zorluk, onu daha güçlü ve cesur yaptı.</p>
+    <p>Bir gün, sislerin arasından eski bir taş kapı belirdi.</p>
+    <p>Kapının üzerindeki garip işaretler, onun kayıp şehre giden yol olduğuna işaret ediyor gibiydi.</p>
+    <p>Mira, kalbinin sesine güvenerek tereddütsüz içeri girdi.</p>
+    <img src="img/bolum3.png" alt="Zorluklar">
+    <figure>
+        <figcaption>Mira Kayıp Şehirde Part 1:</figcaption>
+        <audio controls src="audio/Genç kaşif Mira küçü.mp3"></audio>
+    </figure>
+</section>
 
- <header>
-    <h2 id="zorluklar">BÖLÜM 3: Zorluklar  </h2> 
-</header>
-<p> Mira, yolculuğunda fırtınalar, karanlık ormanlar ve derin vadilerle mücadele etti. </p>
-<p>Her zorluk, onu daha güçlü ve cesur yaptı.</p>
-<p> Bir gün, sislerin arasından eski bir taş kapı belirdi. </p>
-<p>Kapının üzerindeki garip işaretler, onun kayıp şehre giden yol olduğuna işaret ediyor gibiydi.</p>
-<p> Mira, kalbinin sesine güvenerek tereddütsüz içeri girdi.</p>
-<img src="img/bolum3.png" width="500px" alt="zorluklar">
-
-<figure>
-    <figcaption>Mira Kayıp Şehirde Part 1:</figcaption>
-    <audio controls src="audio/Genç kaşif Mira küçü.mp3">
-    </audio>
-  </figure>
-
-<header> 
-    <h2 id="sehrin-sirri"> BÖLÜM 4: Şehrin Sırrı </h2>
-
-</header>
-<p>Mira, kayıp şehre vardığında dileklerinin gerçekleştiğini gördü, ama kısa süre sonra bunun bir bedeli olduğunu fark etti.</p>
-<p> Şehir, her hayal için ondan bir parça alıyordu—özgürlüğü ve ruhunu. </p>
-<p>Mira, gerçek mutluluğun dışsal arzularla değil, kendi içindeki cesaretle bulunacağını anladı.</p>
-<p>Şehri terk ederken artık biliyordu ki, en büyük hazine, bu yolculukta kazandığı bilgelik ve güçtü.</p>
-<img src="img/bolum4.png" width="500px" alt="SehrinSırrı">
-
-
-  <figure>
-    <figcaption>Mira Kayıp Şehirde Part 2:</figcaption>
-    <audio controls src="audio/Mira kayıp şehre var.mp3">
-    </audio>
-  </figure>
-
-  
+<!-- Bölüm 4 -->
+<section id="sehrin-sirri" class="content-section">
+    <header>
+        <h2>BÖLÜM 4: Şehrin Sırrı</h2>
+    </header>
+    <p>Mira, kayıp şehre vardığında dileklerinin gerçekleştiğini gördü, ama kısa süre sonra bunun bir bedeli olduğunu fark etti.</p>
+    <p>Şehir, her hayal için ondan bir parça alıyordu—özgürlüğü ve ruhunu.</p>
+    <p>Mira, gerçek mutluluğun dışsal arzularla değil, kendi içindeki cesaretle bulunacağını anladı.</p>
+    <p>Şehri terk ederken artık biliyordu ki, en büyük hazine, bu yolculukta kazandığı bilgelik ve güçtü.</p>
+    <img src="img/bolum4.png" alt="Şehrin Sırrı">
+    <figure>
+        <figcaption>Mira Kayıp Şehirde Part 2:</figcaption>
+        <audio controls src="audio/Mira kayıp şehre var.mp3"></audio>
+    </figure>
+</section>
 
 </body>
+</html>
