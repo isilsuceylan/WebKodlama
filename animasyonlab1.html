@@ -22,11 +22,11 @@
 
   .container {
     display: flex;
-    gap: 50px; /* aradaki mesafe */
+    gap: 50px;
   }
 
   .circle {
-    width: 150px; 
+    width: 150px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
     border-radius: 50%;
   }
 
-  /* yüz ifadeleri */
+  /* Yüz İfadeleri */
   .eyes {
     position: absolute;
     top: 40%;
@@ -56,10 +56,10 @@
     bottom: 30%;
     width: 40px;
     height: 20px;
-    border-radius: 50%;
     background-color: black;
   }
 
+  /* Ağız İfadeleri */
   .happy .mouth {
     width: 50px;
     height: 25px;
@@ -79,30 +79,57 @@
     border-radius: 50%;
   }
 
+  .angry .mouth {
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    transform: rotate(180deg);
+  }
+
+  /* Kaşlar */
+  .angry .eyebrows {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .eyebrow {
+    width: 20px;
+    height: 5px;
+    background-color: black;
+    transform: rotate(-30deg); /* Sağ kaş eğik */
+  }
+
+  .eyebrow.right {
+    transform: rotate(30deg); /* Sol kaş eğik */
+  }
+
   /* Animasyonlar */
   .bounce {
     background-color: #ff5733;
-    animation: bounce 2s infinite;
+    animation: bounce 5s linear 2s infinite alternate;
   }
 
   .grow-shrink {
     background-color: #33b5ff;
-    animation: growShrink 2s infinite;
+    animation: growShrink 5s linear 2s infinite alternate;
   }
 
   .fade {
     background-color: #8e44ad;
-    animation: fade 2s infinite;
+    animation: fade 5s linear 2s infinite alternate;
   }
 
   .slide {
     background-color: #2ecc71;
-    animation: slide 2s infinite;
+    animation: slide 5s linear 2s infinite alternate;
   }
 
   .rotate {
     background-color: #f1c40f;
-    animation: rotate 2s infinite;
+    animation: rotate 5s linear 2s infinite alternate;
   }
 
   @keyframes bounce {
@@ -111,8 +138,8 @@
   }
 
   @keyframes growShrink {
-    0%, 100% { transform: scale(1); background-color: #33b5ff; }
-    50% { transform: scale(1.2); background-color: #ff33a8; }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
   }
 
   @keyframes fade {
@@ -142,10 +169,14 @@
     <div class="mouth"></div>
   </div>
   
-  <div class="circle grow-shrink sad">
+  <div class="circle grow-shrink angry">
     <div class="eyes">
       <div class="eye"></div>
       <div class="eye"></div>
+    </div>
+    <div class="eyebrows">
+      <div class="eyebrow left"></div>
+      <div class="eyebrow right"></div>
     </div>
     <div class="mouth"></div>
   </div>
@@ -162,6 +193,10 @@
     <div class="eyes">
       <div class="eye"></div>
       <div class="eye"></div>
+    </div>
+    <div class="eyebrows">
+      <div class="eyebrow left"></div>
+      <div class="eyebrow right"></div>
     </div>
     <div class="mouth"></div>
   </div>
