@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animasyonlu Yuvarlaklar</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    gap: 50px; /* aradaki mesafe */
+  }
+
+  .circle {
+    width: 150px; 
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+  }
+
+  /* yüz ifadeleri */
+  .eyes {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .eye {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  .mouth {
+    position: absolute;
+    bottom: 30%;
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  .happy .mouth {
+    width: 50px;
+    height: 25px;
+    border-radius: 0 0 50px 50px;
+  }
+
+  .sad .mouth {
+    width: 50px;
+    height: 25px;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(180deg);
+  }
+
+  .surprised .mouth {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  /* Animasyonlar */
+  .bounce {
+    background-color: #ff5733;
+    animation: bounce 2s infinite;
+  }
+
+  .grow-shrink {
+    background-color: #33b5ff;
+    animation: growShrink 2s infinite;
+  }
+
+  .fade {
+    background-color: #8e44ad;
+    animation: fade 2s infinite;
+  }
+
+  .slide {
+    background-color: #2ecc71;
+    animation: slide 2s infinite;
+  }
+
+  .rotate {
+    background-color: #f1c40f;
+    animation: rotate 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes growShrink {
+    0%, 100% { transform: scale(1); background-color: #33b5ff; }
+    50% { transform: scale(1.2); background-color: #ff33a8; }
+  }
+
+  @keyframes fade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes slide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="circle bounce happy">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+  
+  <div class="circle grow-shrink sad">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+
+  <div class="circle fade surprised">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+
+  <div class="circle slide angry">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+
+  <div class="circle rotate surprised">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+</div>
+
+</body>
+</html>
