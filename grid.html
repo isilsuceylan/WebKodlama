@@ -3,49 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Layout Örneği</title>
+    <title>Hikaye</title>
     <style>
-        
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto;
-            gap: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        
-        .box {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            padding: 20px;
         }
 
-        .box-a { background-color: #002855; grid-column: 1 / 4; }
-        .box-b { background-color: #F28C28; }
-        .box-c { background-color: #7CB342; }
-        .box-d { background-color: #D32F2F; }
-        .box-e { background-color: #FFC107; grid-column: 1 / 3; }
-        .box-f { background-color: #8E24AA; }
-        .box-g { background-color: #43A047; grid-column: 1 / 4; }
+        header {
+            background-color: #4b0082;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 28px; /* Başlık boyutunu eşitledik */
+            margin: 20px 0;
+            color: #4b0082;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        nav ul li {
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            color: #4b0082;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: #a8e6cf;
+            background-color: #4b0082;
+        }
+
+        .content-section {
+            max-width: 800px;
+            width: 90%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .content-section img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        audio {
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figcaption {
+            font-weight: bold;
+            color: #4b0082;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .content-section {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 <body>
+        
+<header> 
+    <h1>MİRA'NIN KEŞFİ</h1>
+</header>
 
-    <div class="container">
-        <div class="box box-a">A</div>
-        <div class="box box-b">B</div>
-        <div class="box box-c">C</div>
-        <div class="box box-d">D</div>
-        <div class="box box-e">E</div>
-        <div class="box box-f">F</div>
-        <div class="box box-g">G</div>
-    </div>
+<nav>
+    <ul>
+        <li><a href="#cesaret-kesfi">BÖLÜM 1: Cesaret Keşfi</a></li>
+        <li><a href="#yola-cikis">BÖLÜM 2: Yola Çıkış</a></li>
+        <li><a href="#zorluklar">BÖLÜM 3: Zorluklar</a></li>
+        <li><a href="#sehrin-sirri">BÖLÜM 4: Şehrin Sırrı</a></li>
+    </ul>
+</nav>
+
+<section id="cesaret-kesfi" class="content-section">
+    <header>
+        <h2>BÖLÜM 1: Cesaret Keşfi</h2>
+    </header>
+    <p>Genç kaşif Mira, küçük köyünde büyüyen hayalperest biriydi.</p>
+    <p>Efsanelerdeki kaybolmuş şehir, onun için bir tutku haline gelmişti.</p>
+    <p>Bu şehirde herkesin en derin arzuları gerçekleşiyordu, ama kimse bu şehri bulamamıştı.</p>
+    <p>Mira, kendi içindeki cesareti keşfederek yola çıkmaya karar verdi.</p>
+    <p>Haritasız, sadece kalbinin sesini dinleyerek ilerleyecekti.</p>
+    <img src="img/bolum1.png" alt="Cesaret Keşfi">
+</section>
+
+<section id="yola-cikis" class="content-section">
+    <header>
+        <h2>BÖLÜM 2: Yola Çıkış</h2>
+    </header>
+    <p>Mira, efsanevi kaybolmuş şehri bulma arzusuyla köyünden ayrıldı.</p>
+    <p>Haritasız, yalnızca kalbinin rehberliğine güvenerek bilinmeyene doğru adım attı.</p>
+    <p>Bu yolculuk, onu hem dış dünyada hem de kendi içinde keşiflere götürecekti.</p>
+    <img src="img/bolum2.png" alt="Yola Çıkış">
+</section>
+
+<section id="zorluklar" class="content-section">
+    <header>
+        <h2>BÖLÜM 3: Zorluklar</h2>
+    </header>
+    <p>Mira, yolculuğunda fırtınalar, karanlık ormanlar ve derin vadilerle mücadele etti.</p>
+    <p>Her zorluk, onu daha güçlü ve cesur yaptı.</p>
+    <p>Bir gün, sislerin arasından eski bir taş kapı belirdi.</p>
+    <p>Kapının üzerindeki garip işaretler, onun kayıp şehre giden yol olduğuna işaret ediyor gibiydi.</p>
+    <p>Mira, kalbinin sesine güvenerek tereddütsüz içeri girdi.</p>
+    <img src="img/bolum3.png" alt="Zorluklar">
+    <figure>
+        <figcaption>Mira Kayıp Şehirde Part 1:</figcaption>
+        <audio controls src="audio/Genç kaşif Mira küçü.mp3"></audio>
+    </figure>
+</section>
+
+<section id="sehrin-sirri" class="content-section">
+    <header>
+        <h2>BÖLÜM 4: Şehrin Sırrı</h2>
+    </header>
+    <p>Mira, kayıp şehre vardığında dileklerinin gerçekleştiğini gördü, ama kısa süre sonra bunun bir bedeli olduğunu fark etti.</p>
+    <p>Şehir, her hayal için ondan bir parça alıyordu—özgürlüğü ve ruhunu.</p>
+    <p>Mira, gerçek mutluluğun dışsal arzularla değil, kendi içindeki cesaretle bulunacağını anladı.</p>
+    <p>Şehri terk ederken artık biliyordu ki, en büyük hazine, bu yolculukta kazandığı bilgelik ve güçtü.</p>
+    <img src="img/bolum4.png" alt="Şehrin Sırrı">
+    <figure>
+        <figcaption>Mira Kayıp Şehirde Part 2:</figcaption>
+        <audio controls src="audio/Mira kayıp şehre var.mp3"></audio>
+    </figure>
+</section>
 
 </body>
 </html>

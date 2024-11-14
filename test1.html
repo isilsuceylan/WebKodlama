@@ -4,59 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Programcılığı Testi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 8px solid;
+        }
+
+        .personal-info {
+            border-color: #007bff;
+            background-color: #e8f1ff;
+        }
+
+        .experience {
+            border-color: #28a745;
+            background-color: #eafaf1;
+        }
+
+        .skills {
+            border-color: #ffc107;
+            background-color: #fff9e6;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="color"],
+        input[type="range"],
+        input[type="search"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        button[type="submit"],
+        button[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body>
 
 <h1>Web Programcılığı Testi</h1>
-<p>Lütfen aşağıdaki soruları cevaplayın.</p>
 
 <form action="/submit-test" method="POST">
+    <div class="section personal-info">
+        <div>
+            <h3>Kişisel Bilgiler</h3>
+            <label for="name">Ad Soyad:</label>
+            <input type="text" id="name" name="name" required>
 
-    <!-- kişisel Bilgiler -->
-    <label for="name">Ad Soyad:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password" required>
 
-    <label for="password">Şifre:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" required>
 
-    <label for="email">E-posta:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Telefon Numarası:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="5551234567" required>
 
-    <label for="phone">Telefon Numarası:</label><br>
-    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="5551234567" required><br><br>
+            <label for="birthdate">Doğum Tarihi:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+    </div>
 
-    <label for="birthdate">Doğum Tarihi:</label><br>
-    <input type="date" id="birthdate" name="birthdate" required><br><br>
+    <div class="section experience">
+        <div>
+            <h3>Web Programcılığı Tecrübesi</h3>
+            <label>Tecrübe Seviyeniz:</label>
+            <input type="radio" id="beginner" name="experience" value="beginner">
+            <label for="beginner">Başlangıç</label>
+            <input type="radio" id="intermediate" name="experience" value="intermediate">
+            <label for="intermediate">Orta</label>
+            <input type="radio" id="advanced" name="experience" value="advanced">
+            <label for="advanced">İleri</label>
+        </div>
+    </div>
 
-    <!-- web ile ilgili sorular -->
-    <label>Web Programcılığı Tecrübeniz:</label><br>
-    <input type="radio" id="beginner" name="experience" value="beginner">
-    <label for="beginner">Başlangıç</label><br>
-    <input type="radio" id="intermediate" name="experience" value="intermediate">
-    <label for="intermediate">Orta</label><br>
-    <input type="radio" id="advanced" name="experience" value="advanced">
-    <label for="advanced">İleri</label><br><br>
+    <div class="section skills">
+        <div>
+            <h3>Beceriler</h3>
+            <label>Hangi dili/dilleri kullanıyorsunuz?:</label>
+            <input type="checkbox" id="html" name="interest" value="HTML">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="interest" value="CSS">
+            <label for="css">CSS</label>
+            <input type="checkbox" id="js" name="interest" value="JavaScript">
+            <label for="js">JavaScript</label>
 
-    <!-- programlama dili becerileri -->
-    <label>Hangi dili/dilleri kullanıyorsunuz?:</label><br>
-    <input type="checkbox" id="html" name="interest" value="HTML">
-    <label for="html">HTML</label><br>
-    <input type="checkbox" id="css" name="interest" value="CSS">
-    <label for="css">CSS</label><br>
-    <input type="checkbox" id="js" name="interest" value="JavaScript">
-    <label for="js">JavaScript</label><br><br>
+            <label for="favcolor">Bir Site Tasarlarken En çok Hangi Rengi Tercih Edersiniz?:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#0000ff">
 
-    <!-- tercih -->
-    <label for="favcolor"> Bir Site Tasarlarken En çok Hangi Rengi Tercih Edersiniz? :</label><br>
-    <input type="color" id="favcolor" name="favcolor" value="#0000ff"><br><br>
+            <label for="htmlskill">HTML Bilgi Düzeyiniz:</label>
+            <input type="range" id="htmlskill" name="htmlskill" min="0" max="10">
 
-    <!-- (range) -->
-    <label for="htmlskill">HTML Bilgi Düzeyiniz:</label><br>
-    <input type="range" id="htmlskill" name="htmlskill" min="0" max="10"><br><br>
-
-    <!-- (search) -->
-    <label for="search">İlgili Konuları Arayın:</label><br>
-    <input type="search" id="search" name="search" placeholder="Arama yapın..."><br><br>
+            <label for="search">İlgili Konuları Arayın:</label>
+            <input type="search" id="search" name="search" placeholder="Arama yapın...">
+        </div>
+    </div>
 
     <button type="submit">Gönder</button>
     <button type="reset">Temizle</button>
