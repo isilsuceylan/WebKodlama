@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastgele Resimler</title>
+    <style>
+        /* genel css */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        /* tek resmin geleceği yer */
+        .random-image {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .random-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* göster gizle olan yerin kutucukları */
+        .images-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .image-box {
+            width: 150px;
+            text-align: center;
+            background-color: orange;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: none; /* ilk başta gizli olması için*/
+        }
+
+        .button-box {
+            background-color: grey;
+            padding: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- rastgele resimlerin gelmesi için -->
+<div class="random-image" id="randomImageContainer">
+    <img id="randomImage" src="" alt="Random Image">
+</div>
+
+<!-- turuncu kutucuklar -->
+<div class="images-container">
+    <div class="image-box">
+        <img id="img1" src="" alt="Image 1">
+        <div class="button-box" onclick="toggleImage('img1')">Göster/Gizle Resim 1</div>
+    </div>
+    <div class="image-box">
+        <img id="img2" src="" alt="Image 2">
+        <div class="button-box" onclick="toggleImage('img2')">Göster/Gizle Resim 2</div>
+    </div>
+    <div class="image-box">
+        <img id="img3" src="" alt="Image 3">
+        <div class="button-box" onclick="toggleImage('img3')">Göster/Gizle Resim 3</div>
+    </div>
+</div>
+
+<script>
+    // arkaplanda değişen 
+    const backgroundColors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#33FFF6', '#FF9633', '#D3FF33', '#7E33FF', '#FF333D', '#33FFB3'];
+
+    
+    const randomImages = [
+        'img/zambak.jpg',  // 1
+        'img/yasemin.jpg',  // 2
+        'img/sümbül.jpeg',  // 3
+        'img/orkide.jpg',  // 4
+        'img/nergiz.jpg',  // 5
+        'img/lotus2.jpeg',  // 6
+        'img/lale.jpg',  // 7
+        'img/kadife.jpg',  // 8
+        'img/gül.jpg',  // 9
+        'img/begonvil.jpg' // 10
+    ];
+
+    // rastgele arkaplan
+    document.body.style.backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+
+    // yuvarlakta resimler
+    document.getElementById('randomImage').src = randomImages[Math.floor(Math.random() * randomImages.length)];
+
+    // üçlü kutucuklar
+    document.getElementById('img1').src = randomImages[Math.floor(Math.random() * randomImages.length)];
+    document.getElementById('img2').src = randomImages[Math.floor(Math.random() * randomImages.length)];
+    document.getElementById('img3').src = randomImages[Math.floor(Math.random() * randomImages.length)];
+
+    // göster/gizle butonları
+    function toggleImage(id) {
+        const img = document.getElementById(id);
+        if (img.style.display === "none") {
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
