@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Kareler</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+       
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // karelerin boyutunu ayarlıyoruz.
+        var kareBoyutu = 50;
+        for (var i = 0; i < 10; i++) { // satır boyutları
+            for (var j = 0; j < 10; j++) { // sütun boyutları
+                // sayfayı yenilediğimizde rastgele renkler
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                var renk = `rgb(${r}, ${g}, ${b})`;
+
+                // kareleri çiz
+                ctx.fillStyle = renk;
+                ctx.fillRect(j * kareBoyutu, i * kareBoyutu, kareBoyutu, kareBoyutu);
+            }
+        }
+    </script>
+</body>
+</html>

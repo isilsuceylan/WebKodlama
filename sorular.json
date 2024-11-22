@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "question": "HTML'deki <div> etiketi ile <section> etiketi arasındaki farklar nelerdir?",
+        "options": [
+          "A. <div> daha semantik bir etikettir.",
+          "B. <section> belirli bir konu veya bölüm için kullanılır.",
+          "C. <div> sadece blok seviyesinde elemanları gruplar.",
+          "D. <section> sadece form etiketlerinde kullanılır."
+        ],
+        "correctAnswer": "B",
+        "topic": "HTML"
+      },
+      {
+        "question": "JavaScript'te 'var', 'let' ve 'const' arasındaki farklar nelerdir?",
+        "options": [
+          "A. 'var' fonksiyon kapsamına sahiptir, 'let' ve 'const' blok kapsamına sahiptir.",
+          "B. 'let' ve 'const' yalnızca global değişkenler oluşturur.",
+          "C. 'const' değiştirilebilen bir değeri tanımlar.",
+          "D. 'var' sadece fonksiyonlar içinde kullanılabilir."
+        ],
+        "correctAnswer": "A",
+        "topic": "JavaScript"
+      },
+      {
+        "question": "CSS Flexbox ile Grid arasındaki farklar nedir?",
+        "options": [
+          "A. Flexbox tek bir eksende çalışır, Grid ise iki eksende çalışır.",
+          "B. Grid sadece metin hizalamak için kullanılır.",
+          "C. Flexbox yalnızca mobil tasarımlarda kullanılır.",
+          "D. Grid, Flexbox'tan daha az esneklik sunar."
+        ],
+        "correctAnswer": "A",
+        "topic": "CSS"
+      },
+      {
+        "question": "JavaScript'te 'closure' nedir?",
+        "options": [
+          "A. Bir fonksiyonun kendi içinde tanımlanan diğer fonksiyonları tutma yeteneği.",
+          "B. Bir fonksiyonun değerini saklama yeteneği.",
+          "C. 'closure' JavaScript'te kullanılmaz.",
+          "D. Bir fonksiyonun yalnızca global değişkenlere erişim sağlaması."
+        ],
+        "correctAnswer": "A",
+        "topic": "JavaScript"
+      },
+      {
+        "question": "CSS'de 'position: absolute;' ve 'position: relative;' arasındaki fark nedir?",
+        "options": [
+          "A. 'absolute' öğe, en yakın konumlanmış üst öğeye göre konumlanır, 'relative' ise kendi normal yerinden kaydırılır.",
+          "B. 'relative' öğe, tüm sayfada sabit kalır.",
+          "C. 'absolute' öğe, sayfanın alt kısmına sabitlenir.",
+          "D. 'relative' sadece içeriklere uygulanan bir stil türüdür."
+        ],
+        "correctAnswer": "A",
+        "topic": "CSS"
+      },
+      {
+        "question": "HTML5'te kullanılan semantic element'ler nedir?",
+        "options": [
+          "A. <div>, <section>, <article> gibi etiketler, içerik anlamı taşır.",
+          "B. <section>, <article>, <footer> gibi etiketler, sayfanın yapısal bölümünü belirtir.",
+          "C. Semantic element'ler sadece sayfanın stilini tanımlar.",
+          "D. Semantic element'ler yalnızca görsel içerikleri tanımlar."
+        ],
+        "correctAnswer": "B",
+        "topic": "HTML"
+      },
+      {
+        "question": "JavaScript'teki 'this' anahtar kelimesi neyi ifade eder?",
+        "options": [
+          "A. 'this', fonksiyonu çağıran objeyi ifade eder.",
+          "B. 'this', her zaman global objeyi ifade eder.",
+          "C. 'this', yalnızca 'constructor' fonksiyonlarında kullanılır.",
+          "D. 'this', sadece event handler'larda kullanılır."
+        ],
+        "correctAnswer": "A",
+        "topic": "JavaScript"
+      },
+      {
+        "question": "CSS'deki 'z-index' nedir?",
+        "options": [
+          "A. 'z-index' ile öğelerin katman sırası belirlenir.",
+          "B. 'z-index' sadece pozisyonlandırılmış öğelere uygulanabilir.",
+          "C. 'z-index' değeri arttıkça öğe arka planda görünür.",
+          "D. 'z-index' sayfa büyüklüğünü etkileyen bir özelliktir."
+        ],
+        "correctAnswer": "A",
+        "topic": "CSS"
+      },
+      {
+        "question": "HTML form elemanlarında kullanıcı girişi doğrulama işlemleri nasıl yapılır?",
+        "options": [
+          "A. JavaScript ile form doğrulaması yapılabilir.",
+          "B. HTML5'te 'required' ve 'pattern' gibi özellikler doğrulama için kullanılır.",
+          "C. Form doğrulaması sadece sunucu tarafında yapılabilir.",
+          "D. HTML form elemanları doğrudan doğrulama yapamaz."
+        ],
+        "correctAnswer": "B",
+        "topic": "HTML/JavaScript"
+      },
+      {
+        "question": "JavaScript'teki 'callback' fonksiyonları ile 'promise' yapıları arasındaki fark nedir?",
+        "options": [
+          "A. 'callback' fonksiyonları, asenkron işlemleri sırasıyla çalıştırırken, 'promise' daha güvenli ve temiz bir yol sunar.",
+          "B. 'callback' fonksiyonları, yalnızca tek bir işlem yapar, 'promise' birden fazla işlemi aynı anda yapabilir.",
+          "C. 'promise' fonksiyonları sadece sayfalarda çalışır.",
+          "D. 'callback' fonksiyonları daha verimlidir."
+        ],
+        "correctAnswer": "A",
+        "topic": "JavaScript"
+      }
+    ]
+  }
+  

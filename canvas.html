@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serbest Daireler</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Tam ekran yüksekliği */
+      margin: 0;
+      background-color: #f9f9f9; /* Hafif bir arka plan rengi */
+    }
+    canvas {
+      /* Canvas sadece çizim için bir zemin */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Dairelerin çizileceği canvas tanımlandı -->
+  <canvas id="circleCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('circleCanvas');
+    const ctx = canvas.getContext('2d'); // 2D çizim bağlamı
+
+    const rows = 6; // Satır sayısı
+    const cols = 6; // Sütun sayısı
+    const radius = 20; // Dairelerin yarıçapı
+    const padding = 15; // Daireler arası mesafe
+    const startColor = { r: 0, g: 100, b: 255 }; // Başlangıç rengi
+    const endColor = { r: 0, g: 255, b: 100 }; // Bitiş rengi
+
+    // Renk geçişi için lineer interpolasyon fonksiyonu
+    const lerp = (start, end, t) => start + (end - start) * t;
+
+    // Tüm daireleri döngüyle çiz
+    function drawCircles() {
+      const totalCircles = rows * cols; // Toplam daire sayısı
+      for (let i = 0; i < totalCircles; i++) {
+        // Satır ve sütun hesaplama
+        const row = Math.floor(i / cols); // Kaçıncı satırda
+        const col = i % cols; // Kaçıncı sütunda
+
+        // Her dairenin x ve y koordinatlarını hesapla
+        const x = col * (radius * 2 + padding) + radius + padding;
+        const y = row * (radius * 2 + padding) + radius + padding;
+
+        // Renk geçişi için t değerini hesapla
+        const t = i / totalCircles; // Oran (0 ile 1 arasında)
+        const r = Math.round(lerp(startColor.r, endColor.r, t));
+        const g = Math.round(lerp(startColor.g, endColor.g, t));
+        const b = Math.round(lerp(startColor.b, endColor.b, t));
+        const color = `rgb(${r}, ${g}, ${b})`; // Renk oluştur
+
+        // Daireyi çiz
+        ctx.beginPath(); // Yeni bir çizim yolu
+        ctx.arc(x, y, radius, 0, Math.PI * 2); // Daireyi çiz
+        ctx.strokeStyle = color; // Çizgi rengi
+        ctx.lineWidth = 2; // Çizgi kalınlığı
+        ctx.stroke(); // Çizimi uygula
+      }
+    }
+
+    drawCircles(); // Çizim fonksiyonunu çağır
+  </script>
+</body>
+</html>

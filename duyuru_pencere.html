@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Açılır Duyuru Penceresi</title>
+  <style>
+    /* genel css kodları */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* opacity visibility */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      animation: fadeOut 5s forwards;
+    }
+
+    /*  opacity visibility */
+    .popup.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* animations */
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- duyuru -->
+  <div id="popup" class="popup">
+    <p><strong>Duyuru:</strong> Bu bir test duyurusudur.</p>
+    <p>5 saniye içinde kaybolacaktir.</p>
+  </div>
+
+  <script>
+    const popup = document.getElementById('popup');
+    window.onload = () => {
+      // Pencereyi aç
+      popup.classList.add('show');
+
+      // 5 saniye sonra pencere otomatik kapanır
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 5000);
+    };
+  </script>
+
+</body>
+</html>
