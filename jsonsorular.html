@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Uygulaması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        #quiz {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options button:hover {
+            background: #e9e9e9;
+        }
+        .options button.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        .options button.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+        .options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        #score {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #finish {
+            text-align: center;
+            margin-top: 30px;
+        }
+        #finish button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #finish button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Uygulaması</h1>
+    <div id="quiz"></div>
+    <div id="score">Puan: 0</div>
+    <div id="finish">
+        <button onclick="finishQuiz()">Tamamla ve Sonucu Gör</button>
+    </div>
+
+    <script>
+        const data = {
+            "questions": [
+                {
+                    "question": "HTML'deki <div> etiketi ile <section> etiketi arasındaki farklar nelerdir?",
+                    "options": [
+                        "A. <div> daha semantik bir etikettir.",
+                        "B. <section> belirli bir konu veya bölüm için kullanılır.",
+                        "C. <div> sadece blok seviyesinde elemanları gruplar.",
+                        "D. <section> sadece form etiketlerinde kullanılır."
+                    ],
+                    "correctAnswer": "B",
+                    "topic": "HTML"
+                },
+                {
+                    "question": "JavaScript'te 'var', 'let' ve 'const' arasındaki farklar nelerdir?",
+                    "options": [
+                        "A. 'var' fonksiyon kapsamına sahiptir, 'let' ve 'const' blok kapsamına sahiptir.",
+                        "B. 'let' ve 'const' yalnızca global değişkenler oluşturur.",
+                        "C. 'const' değiştirilebilen bir değeri tanımlar.",
+                        "D. 'var' sadece fonksiyonlar içinde kullanılabilir."
+                    ],
+                    "correctAnswer": "A",
+                    "topic": "JavaScript"
+                },
+                {
+                    "question": "CSS Flexbox ile Grid arasındaki farklar nedir?",
+                    "options": [
+                        "A. Flexbox tek bir eksende çalışır, Grid ise iki eksende çalışır.",
+                        "B. Grid sadece metin hizalamak için kullanılır.",
+                        "C. Flexbox yalnızca mobil tasarımlarda kullanılır.",
+                        "D. Grid, Flexbox'tan daha az esneklik sunar."
+                    ],
+                    "correctAnswer": "A",
+                    "topic": "CSS"
+                },
+                {
+                    "question": "JavaScript'te 'closure' nedir?",
+                    "options": [
+                        "A. Bir fonksiyonun kendi içinde tanımlanan diğer fonksiyonları tutma yeteneği.",
+                        "B. Bir fonksiyonun değerini saklama yeteneği.",
+                        "C. 'closure' JavaScript'te kullanılmaz.",
+                        "D. Bir fonksiyonun yalnızca global değişkenlere erişim sağlaması."
+                    ],
+                    "correctAnswer": "A",
+                    "topic": "JavaScript"
+                },
+                {
+                    "question": "CSS'de 'position: absolute;' ve 'position: relative;' arasındaki fark nedir?",
+                    "options": [
+                        "A. 'absolute' öğe, en yakın konumlanmış üst öğeye göre konumlanır, 'relative' ise kendi normal yerinden kaydırılır.",
+                        "B. 'relative' öğe, tüm sayfada sabit kalır.",
+                        "C. 'absolute' öğe, sayfanın alt kısmına sabitlenir.",
+                        "D. 'relative' sadece içeriklere uygulanan bir stil türüdür."
+                    ],
+                    "correctAnswer": "A",
+                    "topic": "CSS"
+                }
+                // Devam eden soruları JSON'dan ekleyin...
+            ]
+        };
+
+        let score = 0;
+
+        const quizContainer = document.getElementById("quiz");
+
+        data.questions.forEach((q, index) => {
+            const questionDiv = document.createElement("div");
+            questionDiv.className = "question";
+
+            const questionTitle = document.createElement("h3");
+            questionTitle.textContent = `${index + 1}. ${q.question}`;
+            questionDiv.appendChild(questionTitle);
+
+            const optionsDiv = document.createElement("ul");
+            optionsDiv.className = "options";
+
+            q.options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => {
+                    if (option.startsWith(q.correctAnswer)) {
+                        button.classList.add("correct");
+                        score += 10;
+                    } else {
+                        button.classList.add("wrong");
+                    }
+
+                    const buttons = optionsDiv.querySelectorAll("button");
+                    buttons.forEach(btn => btn.disabled = true);
+
+                    document.getElementById("score").textContent = `Puan: ${score}`;
+                });
+                optionsDiv.appendChild(button);
+            });
+
+            questionDiv.appendChild(optionsDiv);
+            quizContainer.appendChild(questionDiv);
+        });
+
+        function finishQuiz() {
+            alert(`Quiz tamamlandı! Toplam puanınız: ${score}`);
+        }
+    </script>
+</body>
+</html>
